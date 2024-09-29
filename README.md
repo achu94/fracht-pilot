@@ -1,113 +1,20 @@
-Fracht-Pilot Backend
 
-Fracht-Pilot is an application that allows end-users to manage shipments, drivers, and trucks efficiently. This repository contains the backend implementation of the Fracht-Pilot app, which handles the API and database interactions.
-Table of Contents
+# Fracht-Pilot Backend
 
-    About
-    Technologies
-    Setup and Development
-    Scripts
-    Database
-    Current Status
+Fracht-Pilot is a backend service for an application that enables end-users to manage shipments, drivers, and trucks efficiently. The backend serves as the central point for handling API requests, database interactions, and business logic for shipment management.
 
-About
+## Technologies Used
 
-Fracht-Pilot is designed to help users manage their shipments, drivers, and trucks in one platform. This backend serves as the core of the app, handling all the logic, data processing, and interactions with the database.
-Technologies
+This project leverages the following technologies:
 
-This project utilizes the following packages:
+- **Bun**: A fast, all-in-one JavaScript runtime used to handle the backend server efficiently with modern JavaScript features.
+- **Hono**: A lightweight, high-performance web framework for building APIs in TypeScript. Hono provides an easy way to create RESTful endpoints to manage shipments, drivers, and trucks.
+- **Drizzle ORM**: A type-safe, lightweight ORM for managing database schema, migrations, and data operations. It simplifies database interactions and enforces type safety within the TypeScript codebase.
+- **MySQL2**: A modern MySQL client for Node.js and Bun, used for establishing a connection with the MySQL database and executing SQL queries.
+- **Drizzle-Kit**: A set of tools designed to work with Drizzle ORM to generate TypeScript types and perform database migrations safely and easily.
 
-    Bun: A fast all-in-one JavaScript runtime that is used here for its speed and modern development experience.
-    Hono: A lightweight and fast web framework for building APIs. It is used to create RESTful endpoints that allow users to manage shipments, drivers, and trucks.
-    Drizzle ORM: A type-safe, lightweight ORM for TypeScript and JavaScript. It is used to handle database schema generation, migrations, and data interaction.
-    mysql2: A modern MySQL client for Node.js and Bun, providing the database connection and query execution.
-    drizzle-kit: A set of tools that work with Drizzle ORM to generate types and perform database migrations in a type-safe manner.
+## Current State
 
-Dev Dependencies
-
-    @types/bun: Type definitions for Bun, enabling better TypeScript support during development.
-
-Setup and Development
-
-    Clone the repository:
-
-    bash
-
-git clone https://github.com/your-username/fracht-pilot-backend.git
-cd fracht-pilot-backend
-
-Install dependencies (Bun automatically installs dependencies):
-
-bash
-
-bun install
-
-Set up the environment variables:
-
-    Create a .env file in the root directory.
-    Add your database connection details and other necessary configuration values.
-
-Start the development server:
-
-bash
-
-    bun run --hot src/index.ts
-
-Scripts
-
-Here are the key scripts you can use to interact with the backend:
-
-    dev: Runs the development server with hot-reloading.
-
-    bash
-
-bun run --hot src/index.ts
-
-db:generate: Generates TypeScript types and models using Drizzle ORM.
-
-bash
-
-bun drizzle-kit generate
-
-db:migrate: Runs the database migrations using Drizzle.
-
-bash
-
-bun run --no-install src/db/migrate.ts
-
-db:seed: Seeds the database with initial data.
-
-bash
-
-    bun run --no-install src/db/seed.ts
-
-Database
-
-The backend uses MySQL as the database. The schema and interactions with the database are managed using Drizzle ORM. Here’s an overview of how the database is handled:
-
-    Migrations: Define changes to the database schema in a structured way, allowing for easy updates and rollbacks.
-    Seeding: Populates the database with initial data such as default users, trucks, and sample shipments.
-
-To apply database migrations:
-
-bash
-
-bun run --no-install src/db/migrate.ts
-
-To seed the database:
-
-bash
-
-bun run --no-install src/db/seed.ts
-
-Current Status
-
-    Database Migrations: Completed. The database schema has been set up using Drizzle ORM, and the initial migrations have been successfully applied.
-    API Development: Currently in progress. Working on building and refining RESTful endpoints using Hono to manage shipments, drivers, and trucks.
-
-Contributing
-
-Feel free to open issues and submit pull requests. Any help to improve the backend is appreciated!
-License
-
-This project is open-source and available under the MIT License.
+- **Database Migrations**: The database schema has been fully set up using Drizzle ORM, and all necessary migrations have been completed to support shipment, driver, and truck management.
+- **API Development**: The development of RESTful endpoints using the Hono framework is currently in progress. These endpoints will provide functionalities for managing shipments, trucks, and drivers.
+- **Seeding**: Initial database seeding scripts are in place to populate the database with sample data, streamlining the testing and development process.
