@@ -1,0 +1,19 @@
+{
+  "name": "fracht-pilot",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "db:generate": "bun drizzle-kit generate",
+    "db:migrate": "bun run --no-install src/db/migrate.ts",
+    "db:seed": "bun run --no-install src/db/seed.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.6.3",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.24.2"
+  }
+}
